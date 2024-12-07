@@ -18,6 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     <?php foreach ($news as $item): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($item['title']); ?></td>

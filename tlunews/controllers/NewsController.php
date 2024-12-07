@@ -1,30 +1,27 @@
 <?php
-include_once '../config/database.php';
-include_once '../models/News.php';
-include_once '../models/Category.php';
+require_once '../config/database.php';
+require_once '../models/News.php';
+require_once '../models/Category.php';
 
 class NewsController
 {
-    private $newsModel;
-    private $categoryModel;
+    private News $newsModel;
+    private Category $categoryModel;
 
     public function __construct()
     {
         $database = new Database();
-        $this->newsModel = new News($database->pdo);
-        $this->categoryModel = new Category($database->pdo);
+        $pdo = $database->pdo;
+        $this->newsModel = new News($pdo);
+        $this->categoryModel = new Category($pdo);
     }
 
-    public function getAllNews()
+    public function getAllNews(): void
     {
     }
 
-
-    public function detail($id)
+    public function detail(int $id): void
     {
-        
     }
-
 }
-
 ?>

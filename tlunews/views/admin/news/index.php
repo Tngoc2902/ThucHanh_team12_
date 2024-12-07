@@ -8,7 +8,7 @@
 <div class="card shadow-sm border-0">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover"> 
                 <thead class="table-light">
                     <tr>
                         <th>Tiêu Đề</th>

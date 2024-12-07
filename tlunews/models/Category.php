@@ -18,7 +18,7 @@ class Category {
 
     public function add($name) {
         $stmt = $this->pdo->prepare("INSERT INTO categories (name) VALUES (?)");
-        return $stmt->execute([$name]);
+        return $stmt->execute([$name]); 
     }
 
     public function update($id, $name) {

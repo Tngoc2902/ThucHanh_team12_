@@ -7,27 +7,32 @@ class Category {
     }
 
     public function getAll() {
-        return $this->pdo->query("SELECT * FROM categories")->fetchAll();
+        $query = "SELECT * FROM categories";
+        return $this->pdo->query($query)->fetchAll();
     }
 
     public function getById($id) {
-        $stmt = $this->pdo->prepare("SELECT * FROM categories WHERE id = ?");
+        $query = "SELECT * FROM categories WHERE id = ?";
+        $stmt = $this->pdo->prepare($query);
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
 
     public function add($name) {
-        $stmt = $this->pdo->prepare("INSERT INTO categories (name) VALUES (?)");
+        $query = "INSERT INTO categories (name) VALUES (?)";
+        $stmt = $this->pdo->prepare($query);
         return $stmt->execute([$name]);
     }
 
     public function update($id, $name) {
-        $stmt = $this->pdo->prepare("UPDATE categories SET name = ? WHERE id = ?");
+        $query = "UPDATE categories SET name = ? WHERE id = ?";
+        $stmt = $this->pdo->prepare($query);
         return $stmt->execute([$name, $id]);
     }
 
     public function delete($id) {
-        $stmt = $this->pdo->prepare("DELETE FROM categories WHERE id = ?");
+        $query = "DELETE FROM categories WHERE id = ?";
+        $stmt = $this->pdo->prepare($query);
         return $stmt->execute([$id]);
     }
 }

@@ -9,6 +9,7 @@
                 </div>
                 <div class="card-body px-4 py-5">
                     <form action="index.php?action=news&method=add" method="POST" enctype="multipart/form-data">
+                        
                         <!-- Tiêu Đề -->
                         <div class="mb-4">
                             <label for="title" class="form-label">Tiêu Đề</label>
